@@ -1,11 +1,13 @@
+"use client";
+
 import  Link  from "next/link"
 import Image from "next/image"
 import { SignedIn } from "@clerk/nextjs"
-import { usePathname } from "next/navigation"
+import { usePathname } from 'next/navigation'
 import { navLinks } from "@/constants"
 
 const Sidebar = () => {
-  const Pathname = usePathname
+  const Pathname = usePathname();
   return (
     <aside className='sidebar'>
       <div className='flex size-full flex-col gap-4 '>
@@ -18,7 +20,7 @@ const Sidebar = () => {
           <SignedIn>
             <ul className="sidebar-nav_elements">
               {navLinks.map((link) => {
-                const isActive =link.route === Pathname;
+                const isActive = link.route === Pathname;
                 return (
                   <li key={link.route} className={`sidebar-nav-element group ${isActive ? 'bg-purple-gradient text-white' : 'text-gray-700'}`}>
                     <Link href={link.route} className="sidebar-link">
