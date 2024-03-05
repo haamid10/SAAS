@@ -5,8 +5,9 @@ const Sidebar = () => {
   return (
     <aside className='sidebar'>
       <div className='flex size-full flex-col gap-4 '>
+        
         <Link href="/" className="sidebar-logo">
-          <Image src="/assers/images/logo-text.svg"  alt="logo"/>
+          <Image src="/assets/images/logo-text.svg"  alt="logo" width={120} height={120}/>
         </Link>
       </div>
 
