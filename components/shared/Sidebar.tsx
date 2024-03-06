@@ -36,6 +36,20 @@ const Sidebar = () => {
               })}
               </ul>
               <ul className="sidebar-nav_elements">
+              {navLinks.slice(6).map((link) => {
+                const isActive = link.route === Pathname;
+                return (
+                  <li key={link.route} className={`sidebar-nav_element  rounded-full px-2 group ${isActive ? 'bg-purple-gradient text-white' : 'text-gray-700'}`}>
+                    <Link href={link.route} className="sidebar-link">
+                    <Image src={link.icon} alt={link.label} width={24} height={24} className={`${isActive && 'brightness-200'}`}/>
+                    {link.label}
+
+                    </Link>
+                    
+
+                  </li>
+                )
+              })}
               <li className=" flex-center gap-2 p-4 cursor-pointer ">
                 <UserButton afterSignOutUrl="/" showName/>
 
