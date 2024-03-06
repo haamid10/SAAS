@@ -2,9 +2,10 @@
 
 import  Link  from "next/link"
 import Image from "next/image"
-import { SignedIn } from "@clerk/nextjs"
+import { SignedIn, SignedOut } from "@clerk/nextjs"
 import { usePathname } from 'next/navigation'
 import { navLinks } from "@/constants"
+import { Button } from "../ui/button";
 
 const Sidebar = () => {
   const Pathname = usePathname();
@@ -22,7 +23,7 @@ const Sidebar = () => {
               {navLinks.map((link) => {
                 const isActive = link.route === Pathname;
                 return (
-                  <li key={link.route} className={`sidebar-nav-element group ${isActive ? 'bg-purple-gradient text-white' : 'text-gray-700'}`}>
+                  <li key={link.route} className={`sidebar-nav-element rounded-full px-2 group ${isActive ? 'bg-purple-gradient text-white' : 'text-gray-700'}`}>
                     <Link href={link.route} className="sidebar-link">
                     <Image src={link.icon} alt={link.label} width={24} height={24} className={`${isActive && 'brightness-200'}`}/>
                     {link.label}
@@ -35,6 +36,11 @@ const Sidebar = () => {
               })}
             </ul>
           </SignedIn>
+          <SignedOut>
+            <Button>
+              <Link href="/sign-in">Login</Link>
+            </Button>
+          </SignedOut>
 
         </nav>
       </div>
