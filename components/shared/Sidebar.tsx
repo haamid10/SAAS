@@ -23,7 +23,7 @@ const Sidebar = () => {
               {navLinks.map((link) => {
                 const isActive = link.route === Pathname;
                 return (
-                  <li key={link.route} className={`sidebar-nav-element rounded-full px-2 group ${isActive ? 'bg-purple-gradient text-white' : 'text-gray-700'}`}>
+                  <li key={link.route} className={`sidebar-nav_element  rounded-full px-2 group ${isActive ? 'bg-purple-gradient text-white' : 'text-gray-700'}`}>
                     <Link href={link.route} className="sidebar-link">
                     <Image src={link.icon} alt={link.label} width={24} height={24} className={`${isActive && 'brightness-200'}`}/>
                     {link.label}
