@@ -10,7 +10,9 @@ import {
 
 const MobileNav = () => {
   return (
-    <div>MobileNav</div>
+    <header className="header">
+    
+    </header>
   )
 }
 
