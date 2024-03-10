@@ -25,13 +25,10 @@ const MobileNav = () => {
               <Image src="/assets/icons/menu.svg" alt="menu" height={32} width={32} className=" cursor-pointer"/> 
             </SheetTrigger>
             <SheetContent  className="sheet-content sm:w-64">
-              <SheetHeader>
-                <SheetTitle>Are you absolutely sure?</SheetTitle>
-                <SheetDescription>
-                  This action cannot be undone. This will permanently delete your account
-                  and remove your data from our servers.
-                </SheetDescription>
-              </SheetHeader>
+              <>
+              <Image src="/assets/images/logo-text.svg" alt="logo" height={32} width={152} className=" cursor-pointer "/>
+              
+              </>
             </SheetContent>
           </Sheet>
         </SignedIn>
