@@ -22,9 +22,9 @@ const MobileNav = () => {
           <UserButton afterSignOutUrl="/" />
           <Sheet>
             <SheetTrigger>
-              <Image src="/assets/icons/menu.svg" alt="menu" height={32} width={32}/> 
+              <Image src="/assets/icons/menu.svg" alt="menu" height={32} width={32} className=" cursor-pointer"/> 
             </SheetTrigger>
-            <SheetContent>
+            <SheetContent  className="sheet-content sm:w-64">
               <SheetHeader>
                 <SheetTitle>Are you absolutely sure?</SheetTitle>
                 <SheetDescription>
