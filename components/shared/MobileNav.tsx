@@ -21,11 +21,18 @@ const MobileNav = () => {
           <Sheet>
             <SheetTrigger>
               <Image src="/assets/icons/menu.svg" alt="menu" height={32} width={32} className=" cursor-pointer"/> 
+               
+            </SheetTrigger>
+            <SheetContent  className="sheet-content sm:w-64">
+              <>
+              <Image src="/assets/images/logo-text.svg" alt="logo" height={32} width={152} className=" cursor-pointer "/>
               <ul className="header-nav_elements">
                     {navLinks.slice(0,6).map((link) => {
                       const isActive = link.route === Pathname;
                       return (
-                        <li key={link.route} className={`sidebar-nav_element  rounded-full px-2 group ${isActive ? 'bg-purple-gradient text-white' : 'text-gray-700'}`}>
+                        <li 
+                        className={`${isActive && 'gradient-text'} p-18 flex whitespace-nowrap text-dark-700`}
+                        key={link.route}>
                           <Link href={link.route} className="sidebar-link">
                           <Image src={link.icon} alt={link.label} width={24} height={24} className={`${isActive && 'brightness-200'}`}/>
                           {link.label}
@@ -38,11 +45,6 @@ const MobileNav = () => {
                     })}
                     </ul>
                     
-            </SheetTrigger>
-            <SheetContent  className="sheet-content sm:w-64">
-              <>
-              <Image src="/assets/images/logo-text.svg" alt="logo" height={32} width={152} className=" cursor-pointer "/>
-              
               </>
             </SheetContent>
           </Sheet>
